@@ -1,6 +1,6 @@
 ## Your Info:
-1. Matric Number:
-1. Name:
+1. Matric Number: 270607
+1. Name: Tan Yi Qing
 
 ## Instruction:
 
