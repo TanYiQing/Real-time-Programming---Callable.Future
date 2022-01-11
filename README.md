@@ -30,3 +30,5 @@ Execution time: 0.005 seconds
 ```
 
 ## Your Output/Result
+
+![output1](./images/output.png)

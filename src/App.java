@@ -15,14 +15,14 @@ public class App {
         response=input.nextLine();
 
         Future<Integer> count = executor.submit(new CountCharacters(response));
-
         Integer answer = count.get();
-        System.out.print("\n"+response+" - "+ answer);
+
+        System.out.println();
+        System.out.print(response+" - "+ answer);
         double endTime = System.nanoTime();
         double executionTime = (endTime-startTime)/1000000000;
         System.out.println("\n");
-        System.out.print(df.format(executionTime));
-
+        System.out.print(df.format(executionTime)+ " seconds");
     }
 
     static class CountCharacters implements Callable<Integer> {
