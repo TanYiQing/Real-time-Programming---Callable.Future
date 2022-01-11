@@ -26,18 +26,18 @@ public class App {
     }
 
     static class CountCharacters implements Callable<Integer> {
-        private String response;
+        private final String response;
 
         public CountCharacters(String response){
             this.response=response;
         }
 
         @Override
-        public Integer call() throws Exception{
+        public Integer call() {
             return countingfunc();
         }
 
-        private int countingfunc() throws InterruptedException{
+        private int countingfunc() {
             int count=0;
 
             for (int i=0; i<response.length();i++){
