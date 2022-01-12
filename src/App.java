@@ -52,6 +52,8 @@ public class App {
             while((content=bufferedReader.readLine())!=null){
                 words=content.split(" ");
                 for(String word : words){
+                    word=word.replace(",","");
+                    word=word.replace(".","");
                     if(word.equals(response)){
                         count++;
                     }
