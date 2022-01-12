@@ -44,7 +44,7 @@ public class App {
         private int countingfunc() throws IOException {
             int count=0;
             File file=new File("src/RossBeresford.txt");
-            String [] words =null;
+            String [] words;
 
             FileReader fileReader=new FileReader(file);
             BufferedReader bufferedReader=new BufferedReader(fileReader);
