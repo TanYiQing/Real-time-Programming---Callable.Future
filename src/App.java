@@ -1,3 +1,4 @@
+import java.io.*;
 import java.text.DecimalFormat;
 import java.util.concurrent.*;
 import java.util.Scanner;
@@ -36,16 +37,25 @@ public class App {
         }
 
         @Override
-        public Integer call() {
+        public Integer call() throws IOException {
             return countingfunc();
         }
 
-        private int countingfunc() {
+        private int countingfunc() throws IOException {
             int count=0;
+            File file=new File("src/RossBeresford.txt");
+            String [] words =null;
 
-            for (int i=0; i<response.length();i++){
-                if(response.charAt(i)!=' ')
-                    count++;
+            FileReader fileReader=new FileReader(file);
+            BufferedReader bufferedReader=new BufferedReader(fileReader);
+            String content;
+            while((content=bufferedReader.readLine())!=null){
+                words=content.split(" ");
+                for(String word : words){
+                    if(word.equals(response)){
+                        count++;
+                    }
+                }
             }
             return count;
         }
