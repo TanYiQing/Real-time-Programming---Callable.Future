@@ -57,6 +57,7 @@ public class App {
                     }
                 }
             }
+            fileReader.close();
             return count;
         }
     }
