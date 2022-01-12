@@ -6,21 +6,24 @@ public class App {
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         DecimalFormat df = new DecimalFormat("0.000");
-        double startTime= System.nanoTime();
+
         Scanner input=new Scanner(System.in);
         String response;
-
         ExecutorService executor = Executors.newSingleThreadExecutor();
         System.out.print("Input word:");
         response=input.nextLine();
+
+        double startTime= System.nanoTime();
 
         Future<Integer> count = executor.submit(new CountCharacters(response));
         Integer answer = count.get();
 
         System.out.println();
         System.out.print(response+" - "+ answer);
+
         double endTime = System.nanoTime();
         double executionTime = (endTime-startTime)/1000000000;
+
         System.out.println("\n");
         System.out.print(df.format(executionTime)+ " seconds");
     }
